@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+    <script defer src="app.js"></script>
+    <title>Color Flipper</title>
+  </head>
+  <body class="flex">
+    <div class="notification flex" id="notification">Copied to Clipboard!</div>
+    <div class="grid" id="container">
+      <div class="hex-container flex">
+        <div class="label" data-label="hex">hex</div>
+        <p id="color-value-hex">#F0F8FF</p>
+      </div>
+      <div class="rgb-container flex">
+        <div class="label" data-label="rgb">rgb</div>
+        <div id="color-value-rgb" class="rgb">rgb(240, 248, 255)</div>
+      </div>
+      <div class="hsl-container flex">
+        <div class="label" data-label="hsl">hsl</div>
+        <div id="color-value-hsl" class="hsl">hsl(2°, 82%, 56%)</div>
+      </div>
+      <button id="btn">New Color</button>
+    </div>
+  </body>
+</html>
