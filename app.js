@@ -1,3 +1,4 @@
+// DOM Elements
 const btn = document.getElementById('btn')
 const hexColorElem = document.getElementById('color-value-hex')
 const rgbColorElem = document.getElementById('color-value-rgb')
@@ -12,7 +13,7 @@ btn.addEventListener('click', () => {
     document.body.style.backgroundColor = hexColorElem.innerText
 })
 
-
+// Hex to RGB
 const toRGB = (hexValue) => {
     hexValue = hexValue.slice(1)
     let [red, green, blue] = [hexValue.slice(0, 2), hexValue.slice(2, 4), hexValue.slice(4)]
@@ -28,6 +29,7 @@ const toRGB = (hexValue) => {
     return rgb
 }
 
+// RGB to HSL
 const toHSL = (r, g, b) => {
     // Mek r, g, b fractions of 1
     r /= 255
@@ -74,6 +76,7 @@ const toHSL = (r, g, b) => {
 
     hslColorElem.innerText = `hsl(${h}°, ${s}%, ${l}%)`
 }
+// Generating Hex color
 const generateColor = () => {
     let hex = '#'
     let hexValues = 'abcdef1234567890'
@@ -82,12 +85,14 @@ const generateColor = () => {
     }
     return hex.toUpperCase()
 }
+// Saving to Clipboard Animation
 const clipboardAnimation = () => {
     let tl = gsap.timeline()
         .from(notifElem, { top: '-100%', duration: 0.1, delay: 0 })
         .to(notifElem, { top: '2%' })
         .to(notifElem, { top: '-100%', delay: 1, duration: 1.75 })
 }
+// Saving to Clipboard handler
 const saveToClipboard = (e) => {
     if (e.target.dataset.label === 'hex') {
         navigator.clipboard.writeText(hexColorElem.innerText)
@@ -104,7 +109,7 @@ const saveToClipboard = (e) => {
 }
 
 
-
+// Saving to clipboard event
 labels.forEach(label => {
     label.addEventListener('click', (e) => saveToClipboard(e))
 })
