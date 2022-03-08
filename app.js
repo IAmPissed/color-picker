@@ -1,5 +1,5 @@
 import { generateHexColor } from "./Hex.js"
-import { generageHSLColor } from "./HSL.js"
+import { generateHSLColor } from "./HSL.js"
 import { generateRGBColor } from "./RGB.js"
 
 const newColorButton = document.getElementById('btn')
@@ -16,7 +16,7 @@ newColorButton.addEventListener('click', () => {
     Hex = hexColorElement.innerText
     rgbColorElement.innerText = generateRGBColor(Hex)
     RGB = rgbColorElement.innerText
-    hslColorElement.innerText = generageHSLColor(RGB)
+    hslColorElement.innerText = generateHSLColor(RGB)
     updatePageBackgroundColorWithHex()
 })
 const updatePageBackgroundColorWithHex = () => {

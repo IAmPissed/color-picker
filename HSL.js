@@ -1,7 +1,7 @@
 let hue = 0, saturation = 0, lightness = 0;
 let cMax = null, cMin = null, delta = null;
 
-export const generageHSLColor = (RGB) => {
+export const generateHSLColor = (RGB) => {
     let colorCodeFractions = extractRGBColorCodes(RGB).map(color => color / 255)
     findGreatestAndSmallestChannels(colorCodeFractions)
     calculateDelta(cMax, cMin)
