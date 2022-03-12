@@ -7,7 +7,7 @@ export const generateHSLColor = (RGB) => {
     calculateDelta(cMax, cMin)
     calculateHue(colorCodeFractions)
     calculateLightness(cMax, cMin)
-    calculateSaturation(delta, lightness)
+    calculateSaturation(delta)
     return `hsl(${hue}°, ${saturation}%, ${lightness}%)`
 }
 
@@ -31,7 +31,7 @@ const calculateHue = ([red, green, blue]) => {
 const calculateLightness = (cMax, cMin) => {
     lightness = (((cMax + cMin) / 2) * 100).toFixed(0)
 }
-const calculateSaturation = (delta, lightness) => {
-    saturation = delta === 0 ? 0 : delta / (1 - Math.abs(2 * (lightness / 100) - 1))
+const calculateSaturation = (delta) => {
+    saturation = delta === 0 ? 0 : delta / (1 - Math.abs(2 * ((cMax + cMin) / 2) - 1))
     saturation = (saturation * 100).toFixed(0)
 }

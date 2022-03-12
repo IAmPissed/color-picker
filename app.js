@@ -29,10 +29,8 @@ const runClipboardAnimation = () => {
         .to(notificationElement, { top: '-100%', delay: 1, duration: 1.75 })
 }
 const saveToClipboard = (e) => {
-    const { label } = e.target.dataset
-    if (label === 'hex') navigator.clipboard.writeText(hexColorElement.innerText)
-    if (label === 'rgb') navigator.clipboard.writeText(rgbColorElement.innerText)
-    if (label === 'hsl') navigator.clipboard.writeText(hslColorElement.innerText)
+    const color = e.target.nextElementSibling.innerText
+    navigator.clipboard.writeText(color)
     runClipboardAnimation()
 }
 colorLables.forEach(label => {
